@@ -1,41 +1,46 @@
 ﻿@page "/"
 
-    <body class="u-body">
-        <header class="u-clearfix u-header u-header" id="sec-41ff">
-            <div class="u-clearfix u-sheet u-sheet-1">
-                <span class="u-file-icon u-icon  u-icon-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Down"><img src="assets\HomeLogo.jpg"></span>
-                <h1 class="u-text u-text-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Down">Meetings </h1>
-                <div class="u-border-1 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-            </div>
-        </header>
-
-        <div class="container">
-            <div class="row card-group">
-                @foreach (var meeting in meetings)
-                {
-                    <!-- <mat-card-content>hello</mat-card-content> -->
-
-                    <button class="button btn-block" routerLink="/Home/MeetingDetails/{{meeting.meetingID}}">
-                        <h3 class="u-text u-text-2">@meeting.meetingTitle</h3>
-                        <h6 class="u-text u-text-3">Committee</h6>
-                        <h6 class="u-text u-text-4">@meeting.committeeTitle</h6>
-                        <h6 class="u-text u-text-5">Meeting Starts</h6>
-                        <h6 class="u-text u-text-6">@startingTime</h6> <br>
-                    </button>
-                 }
-                </div>
-            </div>
+<body class="u-body">
+    <header class="u-clearfix u-header u-header" id="sec-41ff">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <span class="u-file-icon u-icon  u-icon-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Down"><img src="assets\HomeLogo.jpg"></span>
+            <h1 class="u-text u-text-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Down">Meetings </h1>
+            <div class="u-border-1 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1"></div>
         </div>
-    </body>
+    </header>
+
+    @foreach (var m in meetings)
+    {
+        <button class="button btn-block">
+            <h3 class="u-text u-text-2">@m.meetingTitle</h3>
+            <h6 class="u-text u-text-3">Committee</h6>
+            <h6 class="u-text u-text-4">@m.committeeTitle</h6>
+        </button>
+    }
+    <div class="container">
+        <div class="row card-group">
+            @foreach (var meeting in meetings)
+            {
+                <button class="button btn-block">
+                    <h3 class="u-text u-text-2">@meeting.meetingTitle</h3>
+                    <h6 class="u-text u-text-3">Committee</h6>
+                    <h6 class="u-text u-text-4">@meeting.committeeTitle</h6>
+
+                </button>
+            }
+        </div>
+    </div>
+</body>
 
 
 @code {
 
-    private meeting[] meetings;
 
-    public string meetingTitle { get; set; }
-    public string committeeTitle { get; set; }
-    public DateTime startingTime { get; set; }
+    private IEnumerable<meeting> meetings = new[] {
+        new meeting { meetingTitle = "HR meeting", meetinID = 1 },
+        new meeting { meetingTitle = "IT meeting", meetinID = 2 },
+        new meeting { meetingTitle = "PR meeting", meetinID = 3 },
+    };
 
 
     public class meeting
@@ -48,4 +53,5 @@
 
         public string committeeTitle { get; set; }
     }
+    
 }

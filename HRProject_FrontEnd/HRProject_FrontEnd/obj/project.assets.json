@@ -1150,11 +1150,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\8959\\source\\repos\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
       "projectName": "HRProject_FrontEnd",
-      "projectPath": "C:\\Users\\8959\\source\\repos\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
+      "projectPath": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
       "packagesPath": "C:\\Users\\8959\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\8959\\source\\repos\\HRProject_FrontEnd\\HRProject_FrontEnd\\obj\\",
+      "outputPath": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\8959\\AppData\\Roaming\\NuGet\\NuGet.Config",

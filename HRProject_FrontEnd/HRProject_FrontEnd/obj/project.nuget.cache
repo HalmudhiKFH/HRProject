@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4tAVkXBlrhpYRiMDpaI4NZkfmtF6v6f5verH9Aj99GSkrXvempk2JfMBCiYFrUV7bWe70EZQxAaXtTY65TTqXA==",
+  "dgSpecHash": "kIFBeuv6FzCt8jfm2aKo5snkAZirM9SJsV5FcEYAlofmq6e/YkIL3vf2h6+gEM52pj9P6IhaKb66FjXL65gclg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\8959\\source\\repos\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
+  "projectFilePath": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\8959\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.15\\microsoft.aspnetcore.authorization.5.0.15.nupkg.sha512",
     "C:\\Users\\8959\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.15\\microsoft.aspnetcore.components.5.0.15.nupkg.sha512",
