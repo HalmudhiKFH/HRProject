@@ -55,12 +55,43 @@ namespace HRProject_BackEnd.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<int?>("MeetingsMeetingID")
+                        .HasColumnType("int");
+
                     b.Property<int>("SecretaryID")
                         .HasColumnType("int");
 
                     b.HasKey("CommitteeID");
 
+                    b.HasIndex("MeetingsMeetingID");
+
                     b.ToTable("Committees");
+                });
+
+            modelBuilder.Entity("HRProject_BackEnd.Models.Meetings", b =>
+                {
+                    b.Property<int>("MeetingID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CommitteeID1")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("MeetingEndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("MeetingStartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MeetingTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MeetingID");
+
+                    b.HasIndex("CommitteeID1");
+
+                    b.ToTable("Meetings");
                 });
 
             modelBuilder.Entity("HRProject_BackEnd.Models.UserInfoes", b =>
@@ -99,6 +130,27 @@ namespace HRProject_BackEnd.Migrations
                         .HasForeignKey("UserInfoesUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("HRProject_BackEnd.Models.Committees", b =>
+                {
+                    b.HasOne("HRProject_BackEnd.Models.Meetings", null)
+                        .WithMany("Committees")
+                        .HasForeignKey("MeetingsMeetingID");
+                });
+
+            modelBuilder.Entity("HRProject_BackEnd.Models.Meetings", b =>
+                {
+                    b.HasOne("HRProject_BackEnd.Models.Committees", "CommitteeID")
+                        .WithMany()
+                        .HasForeignKey("CommitteeID1");
+
+                    b.Navigation("CommitteeID");
+                });
+
+            modelBuilder.Entity("HRProject_BackEnd.Models.Meetings", b =>
+                {
+                    b.Navigation("Committees");
                 });
 #pragma warning restore 612, 618
         }
