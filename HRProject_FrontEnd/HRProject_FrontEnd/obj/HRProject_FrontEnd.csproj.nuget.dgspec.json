@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj": {}
+    "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj": {
+    "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
+        "projectUniqueName": "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
         "projectName": "HRProject_FrontEnd",
-        "projectPath": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
-        "packagesPath": "C:\\Users\\8959\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8959\\Documents\\GitHub\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\obj\\",
+        "projectPath": "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\HRProject_FrontEnd.csproj",
+        "packagesPath": "C:\\Users\\9225\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_FrontEnd\\HRProject_FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\8959\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\9225\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-              "version": "[5.0.15, 5.0.15]"
+              "version": "[5.0.13, 5.0.13]"
             }
           ],
           "frameworkReferences": {
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
