@@ -630,3 +630,4 @@ C:\Users\8959\source\repos\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.
 C:\Users\8959\source\repos\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\HRProject_FrontEnd.dll
 C:\Users\8959\source\repos\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\ref\HRProject_FrontEnd.dll
 C:\Users\8959\source\repos\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\HRProject_FrontEnd.pdb
+C:\Users\8959\source\repos\HRProject_FrontEnd\HRProject_FrontEnd\bin\Debug\net5.0\libman.json
