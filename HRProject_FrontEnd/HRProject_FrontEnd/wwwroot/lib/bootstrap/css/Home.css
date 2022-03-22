@@ -1,4 +1,42 @@
-﻿.u-section-1 .u-sheet-1 {
+﻿.button {
+    background-color: #34A0A4;
+    border: none;
+    border-radius: 30px;
+    text-shadow: black 0 0 7px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.committee-button {
+    background-color: #f4511e;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 20px 20px 20px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .button:hover {
+        opacity: 2
+    }
+
+.u-section-1 .u-sheet-1 {
     min-height: 1542px;
 }
 

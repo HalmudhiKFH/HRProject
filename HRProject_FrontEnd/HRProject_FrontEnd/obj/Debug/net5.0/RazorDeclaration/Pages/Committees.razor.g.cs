@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HRProject_FrontEnd.Shared
+namespace HRProject_FrontEnd.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,8 @@ using HRProject_FrontEnd.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Committees")]
+    public partial class Committees : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,16 +91,27 @@ using HRProject_FrontEnd.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Shared\NavMenu.razor"
+#line 19 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Pages\Committees.razor"
        
-    private bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private IEnumerable<committee> committees = new[] {
+        new committee { CommitteeTitle = "HR Committee", CommitteeID = 1 },
+        new committee { CommitteeTitle = "IT Committee", CommitteeID = 2 },
+        new committee { CommitteeTitle = "PR Committee", CommitteeID = 3 },
+    };
 
-    private void ToggleNavMenu()
+
+    public class committee
     {
-        collapseNavMenu = !collapseNavMenu;
+        public int CommitteeID { get; set; }
+        public string CommitteeTitle { get; set; }
+        public int chairmanID { get; set; }
+        public int secretaryID { get; set; }
+        public DateTime committeeStartDate { get; set; }
+        public DateTime committeeEndDate { get; set; }
+
     }
+
 
 #line default
 #line hidden

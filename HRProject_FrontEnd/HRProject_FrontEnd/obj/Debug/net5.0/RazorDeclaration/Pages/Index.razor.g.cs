@@ -91,14 +91,14 @@ using HRProject_FrontEnd.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Pages\Index.razor"
+#line 28 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Pages\Index.razor"
        
 
 
     private IEnumerable<meeting> meetings = new[] {
         new meeting { meetingTitle = "HR meeting", meetinID = 1 },
-        new meeting { meetingTitle = "HR meeting", meetinID = 1 },
-        new meeting { meetingTitle = "HR meeting", meetinID = 1 },
+        new meeting { meetingTitle = "IT meeting", meetinID = 2 },
+        new meeting { meetingTitle = "PR meeting", meetinID = 3 },
     };
 
 

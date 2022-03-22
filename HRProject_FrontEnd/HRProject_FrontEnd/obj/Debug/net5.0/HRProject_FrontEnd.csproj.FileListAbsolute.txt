@@ -1264,3 +1264,7 @@ C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\o
 C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\HRProject_FrontEnd.dll
 C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\ref\HRProject_FrontEnd.dll
 C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\HRProject_FrontEnd.pdb
+C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\RazorDeclaration\Pages\Committees.razor.g.cs
+C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\Razor\Pages\Committees.razor.g.cs
+C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\RazorDeclaration\Pages\CommitteeDetails.razor.g.cs
+C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\obj\Debug\net5.0\Razor\Pages\CommitteeDetails.razor.g.cs

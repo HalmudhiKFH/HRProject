@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HRProject_FrontEnd.Shared
+namespace HRProject_FrontEnd.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,9 @@ using HRProject_FrontEnd.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Committees/CommitteeDetails/{CommitteeID:int}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Committees/CommitteeDetails/")]
+    public partial class CommitteeDetails : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,16 +92,11 @@ using HRProject_FrontEnd.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Shared\NavMenu.razor"
+#line 7 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Pages\CommitteeDetails.razor"
        
-    private bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    [Parameter]
+    public int CommitteeID { get; set; }
 
 #line default
 #line hidden
