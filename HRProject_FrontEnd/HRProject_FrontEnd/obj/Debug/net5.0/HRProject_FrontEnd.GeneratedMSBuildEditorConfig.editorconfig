@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = HRProject_FrontEnd
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\9227\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\
+=======
+build_property.ProjectDir = C:\Users\9225\Source\Repos\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\
+>>>>>>> 8ad05765c49c74e0a0a14db871959957d66cb230

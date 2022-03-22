@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\9227\\Documents\\GitHub\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj": {}
+    "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\9227\\Documents\\GitHub\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj": {
+    "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\9227\\Documents\\GitHub\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj",
         "projectName": "HRProject_BackEnd",
-        "projectPath": "C:\\Users\\9227\\Documents\\GitHub\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj",
-        "packagesPath": "C:\\Users\\9227\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\9227\\Documents\\GitHub\\HRProject\\HRProject_BackEnd\\obj\\",
+        "projectPath": "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_BackEnd\\HRProject_BackEnd.csproj",
+        "packagesPath": "C:\\Users\\9225\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\9225\\Source\\Repos\\HRProject\\HRProject_BackEnd\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\9227\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
+          "C:\\Users\\9225\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -49,25 +45,31 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.15, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[5.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.Identity.Web": {
+              "target": "Package",
+              "version": "[1.5.1, )"
+            },
+            "Microsoft.Identity.Web.MicrosoftGraph": {
+              "target": "Package",
+              "version": "[1.5.1, )"
+            },
+            "Microsoft.Identity.Web.UI": {
+              "target": "Package",
+              "version": "[1.5.1, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -96,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

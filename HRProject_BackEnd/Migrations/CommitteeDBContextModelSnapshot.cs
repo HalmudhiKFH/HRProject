@@ -104,6 +104,10 @@ namespace HRProject_BackEnd.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<string>("EmployeeID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsEmployee")
                         .HasColumnType("bit");
 
