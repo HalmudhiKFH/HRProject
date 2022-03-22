@@ -195,13 +195,13 @@
       "mscorlib.dll": "sha256-CbcIR45\/xUFaZJqGIle6bb7v2kWYjp4kOFpKNnCkd4I=",
       "netstandard.dll": "sha256-qE0Q70OyVlHYY\/Y3nwMjfh+zissea9uhfvWMvPWfI7w=",
       "System.Private.CoreLib.dll": "sha256-pdkcl2+OojCfrhxX5eFmKI30wAmhL6s+sCLp7s175k0=",
-      "HRProject_FrontEnd.dll": "sha256-DcZyJomf4w\/Tx3xYg3OZHTJ9\/G9LC+RRoH6UWlIwE\/8="
+      "HRProject_FrontEnd.dll": "sha256-WPBLL5d9k1\/DTOiSlgWFgEBOllMs7OUOzGNnhHtaW3Q="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "HRProject_FrontEnd.pdb": "sha256-xxvaO7uWkU4MIkeQ4\/oBW+mwLFRamkLoRdYdurGSF8o="
+      "HRProject_FrontEnd.pdb": "sha256-Zu0Nh0z0wkv+u2Dk+SyAPJxBnDIjYAjocBzOjhqUztY="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ootDKSA6cNAbgJLmPhrHsPVvVqkGEYdRZxucC22LWjw=",

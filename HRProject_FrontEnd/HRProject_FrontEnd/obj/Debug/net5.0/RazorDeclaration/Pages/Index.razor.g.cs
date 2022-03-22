@@ -91,7 +91,7 @@ using HRProject_FrontEnd.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Pages\Index.razor"
+#line 29 "C:\Users\8959\Documents\GitHub\HRProject\HRProject_FrontEnd\HRProject_FrontEnd\Pages\Index.razor"
        
 
 
