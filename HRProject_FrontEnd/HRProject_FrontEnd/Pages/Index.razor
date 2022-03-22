@@ -9,19 +9,41 @@
         </div>
     </header>
 
+<<<<<<< HEAD
     <div class="container">
         <!--div class="row card-group col-4 box">
         -->
+=======
+    @foreach (var m in meetings)
+    {
+        <button class="button btn-block">
+            <h3 class="u-text u-text-2">@m.meetingTitle</h3>
+            <h6 class="u-text u-text-3">Committee</h6>
+            <h6 class="u-text u-text-4">@m.meetinID</h6>
+        </button>
+    }
+    @*<div class="container">
+        <div class="row card-group">
+>>>>>>> c0d974d4774c6bb680f32589b97f1884ff869316
             @foreach (var meeting in meetings)
             {
                 <button class="button btn-block">
                     <h3 class="u-text u-text-2">@meeting.meetingTitle</h3>
                     <h6 class="u-text u-text-3">Committee</h6>
+<<<<<<< HEAD
                     <h6 class="u-text u-text-4">@meeting.committeeTitle</h6>
                 </button>
             }
         <!--</div> -->
     </div>
+=======
+                    <h6 class="u-text u-text-4">@meeting.meetinID</h6>
+
+                </button>
+            }
+        </div>
+    </div>*@
+>>>>>>> c0d974d4774c6bb680f32589b97f1884ff869316
 </body>
 
 

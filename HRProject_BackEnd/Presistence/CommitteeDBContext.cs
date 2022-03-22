@@ -16,5 +16,6 @@ namespace HRProject_BackEnd.Presistence
         }
         public DbSet<UserInfoes> UserInfoes { get; set; }
         public DbSet<Committees> Committees { get; set; }
+        public DbSet<Meetings> Meetings { get; set; }
     }
 }
