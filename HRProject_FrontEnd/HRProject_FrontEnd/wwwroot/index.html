@@ -11,7 +11,8 @@
     <link href="HRProject_FrontEnd.styles.css" rel="stylesheet" />
     <link href="lib/bootstrap/css/Home.css" rel="stylesheet" />
     <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
-
+    <link href="jquery.datetimepicker.min.css" rel="stylesheet" />
+    <link href="https://stackpatj.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -23,8 +24,25 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
 
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="jquery.datetimepicker.full.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="jquery.datetimepicker.full.min.js"></script>
+    <script>
+        $('#picker').datetimepicker({
+            timepicker: false,
+            datepicker: true,
+            format: 'Y-m-d' //FormatDate
+                value: '2022-3-24' //DefaultDate
+                weeks: true
+        })
+    </script>
+    <script>
+        $('datepicker').datepicker < input class="datepicker" data - date - format="mm/dd/yyyy" >;
+    </script>
 </body>
 
 </html>
