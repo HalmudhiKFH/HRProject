@@ -39,6 +39,7 @@ namespace HRProject_BackEnd
                 {
                     builder.AllowAnyMethod();
                     builder.AllowAnyOrigin();
+                    builder.AllowAnyHeader();
                 });
             });
         }

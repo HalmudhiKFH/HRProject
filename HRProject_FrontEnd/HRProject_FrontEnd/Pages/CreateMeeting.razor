@@ -1,51 +1,63 @@
 ﻿@page "/createMeeting"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.ComponentModel.DataAnnotations
 
-<h3>Create a new Meeting</h3>
 
-<form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Meeting Title</label>
-            <input type="text" class="form-control" id="MeetingTitle" placeholder="Ex. Happiness Team Weekly Meeting">
-        </div>
-
+<EditForm Model="@meeting" OnValidSubmit="@CreateNewMeeting">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="MeetingTitle">Meeting Title</label>
+        <InputText id="MeetingTitle" @bind-Value="meeting.meetingTitle" />
+        <ValidationMessage For="@(() => meeting.meetingTitle)" />
     </div>
-    <div class="form-row">
-
-        <div class="form-group col-md-6">
-            <label for="inputAddress2">Location</label>
-            <input type="text" class="form-control" id="Location" placeholder="Teams, Burj Baitik, or KFH AUTO">
-        </div>
+    <div class="form-group">
+        <label for="MeetingTitle">Meeting Start Time</label>
+        <InputDate id="MeetingTitle" @bind-Value="meeting.meetingStartTime" />
     </div>
-
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputCity">Date</label>
-            <div class="input-group date" data-provide="datepicker">
-               
-                <!-- Testing Date picker-->
-                <div style="width:400px">
-                    <input data-provide="picker" type="date" class="picker" data-date-format="dd/mm/yyyy">
-                </div>
-
-                <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-th"></span>
-                </div>
-            </div>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">Committee</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
-        </div>
-
+    <div class="form-group">
+        <label for="MeetingTitle">Meeting End Time</label>
+        <InputDate id="MeetingTitle" @bind-Value="meeting.meetingEndTime" />
     </div>
+    <div class="form-group">
+        <label for="MeetingTitle">Meeting Location</label>
+        <InputText id="MeetingTitle" @bind-Value="meeting.Location" />
+    </div>
+    <div class="form-group">
+        <label for="MeetingTitle">Committee</label>
+        <InputNumber id="MeetingTitle" @bind-Value="meeting.committeeID" />
+        <ValidationMessage For="@(() => meeting.committeeID)" />
+    </div>
+    
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <button type="submit">Submit</button>
+</EditForm>
 
 @code {
+    Meeting meeting = new Meeting();
+   
+    public async Task<Meeting> CreateTheMeeting(Meeting request)
+    {
+        var result = await Http.PostAsJsonAsync("api/meetings", request);
+        return await result.Content.ReadFromJsonAsync<Meeting>();
+    }
 
+    async Task CreateNewMeeting()
+    {
+        var result = await CreateTheMeeting(meeting);
+        NavigationManager.NavigateTo($"");
+    }
+
+    public class Meeting
+    {
+        public int meetingID { get; set; }
+        [Required]
+        public string meetingTitle { get; set; }
+        [Required]
+        public DateTime meetingStartTime { get; set; }
+        public DateTime meetingEndTime { get; set; }
+        public string Location { get; set; }
+        [Required]
+        public int committeeID { get; set; }
+    }
 }
