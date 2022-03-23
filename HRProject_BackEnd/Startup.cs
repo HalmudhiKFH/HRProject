@@ -32,6 +32,15 @@ namespace HRProject_BackEnd
                 options.UseSqlServer(Configuration.GetConnectionString("Default")))
                 .AddAuthorization()
                 .AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("kfhpolicy", builder =>
+                {
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyOrigin();
+                });
+            });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -43,6 +52,7 @@ namespace HRProject_BackEnd
                 //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "KFHCommitteeBackend v1"));
             }
 
+            app.UseCors("kfhpolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();

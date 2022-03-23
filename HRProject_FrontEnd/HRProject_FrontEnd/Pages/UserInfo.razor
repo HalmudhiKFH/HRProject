@@ -1,0 +1,52 @@
+﻿@page "/userinfo"
+@inject HttpClient Http
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (userinfoes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>UserID</th>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>IsEmployee</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userinfo in userinfoes)
+            {
+                <tr>
+                    <td>@userinfo.UserID</td>
+                    <td>@userinfo.UserName</td>
+                    <td>@userinfo.Email</td>
+                    <td>@userinfo.IsEmployee</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private UserInfoes[] userinfoes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        userinfoes = await Http.GetFromJsonAsync<UserInfoes[]>("api/UserInfoes");
+    }
+
+    public class UserInfoes
+    {
+        public int UserID { get; set; }
+        public string Email { get; set; }
+        public string UserName { get; set; }
+        public bool IsEmployee { get; set; }
+    }
+}

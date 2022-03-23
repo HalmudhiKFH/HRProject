@@ -11,9 +11,13 @@ namespace HRProject_BackEnd.Models
     {
         [Key]
         public int MeetingID { get; set; }
+        [Required]
         public string MeetingTitle { get; set; }
+        [Required]
         public DateTime MeetingStartTime { get; set; }
         public DateTime MeetingEndTime { get; set; }
+
+        public string Location { get; set; }
         public Committees CommitteeID { get; set; }
         public ICollection<Committees> Committees { get; set; }
         public Meetings()

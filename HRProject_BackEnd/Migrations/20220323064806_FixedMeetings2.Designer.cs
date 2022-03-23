@@ -4,14 +4,16 @@ using HRProject_BackEnd.Presistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRProject_BackEnd.Migrations
 {
     [DbContext(typeof(CommitteeDBContext))]
-    partial class CommitteeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220323064806_FixedMeetings2")]
+    partial class FixedMeetings2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,9 +79,6 @@ namespace HRProject_BackEnd.Migrations
 
                     b.Property<int?>("CommitteeID1")
                         .HasColumnType("int");
-
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("MeetingEndTime")
                         .HasColumnType("datetime2");

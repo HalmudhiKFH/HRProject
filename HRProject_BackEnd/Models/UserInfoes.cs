@@ -14,8 +14,6 @@ namespace HRProject_BackEnd.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserID { get; set; }
         [Required]
-        public string EmployeeID { get; set; }
-        [Required]
         [StringLength(255)]
         public string Email { get; set; }
         [Required]
