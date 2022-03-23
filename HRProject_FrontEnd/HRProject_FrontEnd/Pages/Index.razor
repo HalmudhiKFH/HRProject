@@ -1,6 +1,13 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
+@inject HttpClient Http
 
+@if (meetings == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
 <body class="u-body">
     <header class="u-clearfix u-header u-header" id="sec-41ff">
         <div class="u-clearfix u-sheet u-sheet-1">
@@ -10,21 +17,20 @@
         </div>
     </header>
 
-
     <div class="container">
         <!--div class="row card-group col-4 box">
-    -->
+        -->
 
         @foreach (var m in meetings)
         {
-    <a href="/meetingDetails//@m.meetingID">
+            <a href="/meetingDetails//@m.meetingID">
 
-        <button class="button btn-block">
-            <h3 class="u-text u-text-2">@m.meetingTitle</h3>
-            <h6 class="u-text u-text-3">Committee: @m.committeeTitle</h6>
-            <h6 class="u-text u-text-4">@m.meetingID</h6>
-        </button>
-        </a>
+                <button class="button btn-block">
+                    <h3 class="u-text u-text-2">@m.meetingTitle</h3>
+                    <h6 class="u-text u-text-3">Committee: @m.committeeID</h6>
+                    <h6 class="u-text u-text-4">@m.meetingID</h6>
+                </button>
+            </a>
         }
         <a href="/createMeeting">
 
@@ -32,31 +38,27 @@
                 <h1>+</h1>
             </button>
         </a>
-                    
+
 
     </div>
 </body>
+}
+@code {
 
+    private Meeting[] meetings;
 
-@code { 
-    
-    private IEnumerable<meeting> meetings = new[] {
-        new meeting { meetingTitle = "HR meeting", meetingID = 8643 , committeeTitle = "Happiness Team"},
-        new meeting { meetingTitle = "IT meeting", meetingID = 2038 , committeeTitle = "Front-End"},
-        new meeting { meetingTitle = "PR meeting", meetingID = 3384 , committeeTitle = "Activities"},
-        };
+    protected override async Task OnInitializedAsync()
+    {
+        meetings = await Http.GetFromJsonAsync<Meeting[]>("api/meetings");
+    }
 
-
-            public class meeting
-            {
-                public int meetingID { get; set; }
-
-                public DateTime dateTime { get; set; }
-
-                public string meetingTitle { get; set; }
-
-                public string committeeTitle { get; set; }
-            }
-
-    
+    public class Meeting
+    {
+        public int meetingID { get; set; }
+        public string meetingTitle { get; set; }
+        public DateTime meetingStartTime { get; set; }
+        public DateTime meetingEndTime { get; set; }
+        public string Location { get; set; }
+        public int committeeID { get; set; }
+    }
 }

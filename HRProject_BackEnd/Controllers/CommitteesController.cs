@@ -23,14 +23,14 @@ namespace HRProject_BackEnd.Controllers
 
         // GET: api/Committees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Committees>>> GetCommittees()
+        public async Task<ActionResult<IEnumerable<Committee>>> GetCommittees()
         {
             return await _context.Committees.ToListAsync();
         }
 
         // GET: api/Committees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Committees>> GetCommittees(int id)
+        public async Task<ActionResult<Committee>> GetCommittees(int id)
         {
             var committees = await _context.Committees.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace HRProject_BackEnd.Controllers
         // PUT: api/Committees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCommittees(int id, Committees committees)
+        public async Task<IActionResult> PutCommittees(int id, Committee committees)
         {
             if (id != committees.CommitteeID)
             {
@@ -76,7 +76,7 @@ namespace HRProject_BackEnd.Controllers
         // POST: api/Committees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Committees>> PostCommittees(Committees committees)
+        public async Task<ActionResult<Committee>> PostCommittees(Committee committees)
         {
             _context.Committees.Add(committees);
             await _context.SaveChangesAsync();

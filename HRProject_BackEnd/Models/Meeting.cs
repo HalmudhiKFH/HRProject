@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace HRProject_BackEnd.Models
 {
-    public class Meetings
+    public class Meeting
     {
         [Key]
         public int MeetingID { get; set; }
@@ -18,11 +19,12 @@ namespace HRProject_BackEnd.Models
         public DateTime MeetingEndTime { get; set; }
 
         public string Location { get; set; }
-        public Committees CommitteeID { get; set; }
-        public ICollection<Committees> Committees { get; set; }
-        public Meetings()
-        {
-            Committees = new Collection<Committees>();
-        }
+
+        // Foreign key 
+        [Display(Name = "Committee")]
+        public int CommitteeID { get; set; }
+
+        [ForeignKey("CommitteeID")]
+        public virtual Committee Committee { get; set; }
     }
 }

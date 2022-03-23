@@ -4,14 +4,16 @@ using HRProject_BackEnd.Presistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRProject_BackEnd.Migrations
 {
     [DbContext(typeof(CommitteeDBContext))]
-    partial class CommitteeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220323084544_tryingMeetingFix")]
+    partial class tryingMeetingFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,7 +21,7 @@ namespace HRProject_BackEnd.Migrations
                 .HasAnnotation("ProductVersion", "5.0.15")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CommitteeUserInfo", b =>
+            modelBuilder.Entity("CommitteesUserInfoes", b =>
                 {
                     b.Property<int>("CommitteesCommitteeID")
                         .HasColumnType("int");
@@ -31,10 +33,10 @@ namespace HRProject_BackEnd.Migrations
 
                     b.HasIndex("UserInfoesUserID");
 
-                    b.ToTable("CommitteeUserInfo");
+                    b.ToTable("CommitteesUserInfoes");
                 });
 
-            modelBuilder.Entity("HRProject_BackEnd.Models.Committee", b =>
+            modelBuilder.Entity("HRProject_BackEnd.Models.Committees", b =>
                 {
                     b.Property<int>("CommitteeID")
                         .ValueGeneratedOnAdd()
@@ -63,14 +65,14 @@ namespace HRProject_BackEnd.Migrations
                     b.ToTable("Committees");
                 });
 
-            modelBuilder.Entity("HRProject_BackEnd.Models.Meeting", b =>
+            modelBuilder.Entity("HRProject_BackEnd.Models.Meetings", b =>
                 {
                     b.Property<int>("MeetingID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CommitteeID")
+                    b.Property<int?>("CommitteeID1")
                         .HasColumnType("int");
 
                     b.Property<string>("Location")
@@ -88,12 +90,12 @@ namespace HRProject_BackEnd.Migrations
 
                     b.HasKey("MeetingID");
 
-                    b.HasIndex("CommitteeID");
+                    b.HasIndex("CommitteeID1");
 
                     b.ToTable("Meetings");
                 });
 
-            modelBuilder.Entity("HRProject_BackEnd.Models.UserInfo", b =>
+            modelBuilder.Entity("HRProject_BackEnd.Models.UserInfoes", b =>
                 {
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -116,35 +118,28 @@ namespace HRProject_BackEnd.Migrations
                     b.ToTable("UserInfoes");
                 });
 
-            modelBuilder.Entity("CommitteeUserInfo", b =>
+            modelBuilder.Entity("CommitteesUserInfoes", b =>
                 {
-                    b.HasOne("HRProject_BackEnd.Models.Committee", null)
+                    b.HasOne("HRProject_BackEnd.Models.Committees", null)
                         .WithMany()
                         .HasForeignKey("CommitteesCommitteeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HRProject_BackEnd.Models.UserInfo", null)
+                    b.HasOne("HRProject_BackEnd.Models.UserInfoes", null)
                         .WithMany()
                         .HasForeignKey("UserInfoesUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("HRProject_BackEnd.Models.Meeting", b =>
+            modelBuilder.Entity("HRProject_BackEnd.Models.Meetings", b =>
                 {
-                    b.HasOne("HRProject_BackEnd.Models.Committee", "Committee")
-                        .WithMany("Meetings")
-                        .HasForeignKey("CommitteeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("HRProject_BackEnd.Models.Committees", "CommitteeID")
+                        .WithMany()
+                        .HasForeignKey("CommitteeID1");
 
-                    b.Navigation("Committee");
-                });
-
-            modelBuilder.Entity("HRProject_BackEnd.Models.Committee", b =>
-                {
-                    b.Navigation("Meetings");
+                    b.Navigation("CommitteeID");
                 });
 #pragma warning restore 612, 618
         }

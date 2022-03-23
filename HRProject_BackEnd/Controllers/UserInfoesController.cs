@@ -23,14 +23,14 @@ namespace HRProject_BackEnd.Controllers
 
         // GET: api/UserInfoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserInfoes>>> GetUserInfoes()
+        public async Task<ActionResult<IEnumerable<UserInfo>>> GetUserInfoes()
         {
             return await _context.UserInfoes.ToListAsync();
         }
 
         // GET: api/UserInfoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserInfoes>> GetUserInfoes(int id)
+        public async Task<ActionResult<UserInfo>> GetUserInfoes(int id)
         {
             var userInfoes = await _context.UserInfoes.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace HRProject_BackEnd.Controllers
         // PUT: api/UserInfoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserInfoes(int id, UserInfoes userInfoes)
+        public async Task<IActionResult> PutUserInfoes(int id, UserInfo userInfoes)
         {
             if (id != userInfoes.UserID)
             {
@@ -76,7 +76,7 @@ namespace HRProject_BackEnd.Controllers
         // POST: api/UserInfoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<UserInfoes>> PostUserInfoes(UserInfoes userInfoes)
+        public async Task<ActionResult<UserInfo>> PostUserInfoes(UserInfo userInfoes)
         {
             _context.UserInfoes.Add(userInfoes);
             try

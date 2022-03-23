@@ -1,38 +1,48 @@
 ﻿@page "/Committees"
-
-<h1 style="text-align:center">Committees</h1>
-<link href="~/lib/bootstrap/css/Home.css" rel="stylesheet" />
-<div class="container">
-    <div class="row card-group">
-        @foreach (var c in committees)
-        {
-        <a href="Committees/CommitteeDetails/@c.CommitteeID">
-            <button class="button btn-block">
-
-                <h4>@c.CommitteeTitle</h4>
-                <h6>ID: @c.CommitteeID</h6>
-            </button>
-        </a>
-            }
-    </div>
-</div>
+@inject HttpClient Http
 
 
-@code { 
-            private IEnumerable<committee> committees = new[] {
-                new committee { CommitteeTitle = "HR Committee", CommitteeID = 1 },
-                new committee { CommitteeTitle = "IT Committee", CommitteeID = 2 },
-                new committee { CommitteeTitle = "PR Committee", CommitteeID = 3 },
-            };
 
-            public class committee
+@if (committees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h1 style="text-align:center">Committees</h1>
+    <link href="~/lib/bootstrap/css/Home.css" rel="stylesheet" />
+    <div class="container">
+        <div class="row card-group">
+            @foreach (var c in committees)
             {
-                public int CommitteeID { get; set; }
-                public string CommitteeTitle { get; set; }
-                public int chairmanID { get; set; }
-                public int secretaryID { get; set; }
-                public DateTime committeeStartDate { get; set; }
-                public DateTime committeeEndDate { get; set; }
+                <a href="Committees/CommitteeDetails/@c.CommitteeID">
+                    <button class="button btn-block">
 
+                        <h4>@c.CommitteeTitle</h4>
+                        <h6>ID: @c.CommitteeID</h6>
+                    </button>
+                </a>
             }
+        </div>
+    </div>
+}
+
+@code {
+    private committee[] committees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        committees = await Http.GetFromJsonAsync<committee[]>("api/committees");
+    }
+
+    public class committee
+    {
+        public int CommitteeID { get; set; }
+        public string CommitteeTitle { get; set; }
+        public int chairmanID { get; set; }
+        public int secretaryID { get; set; }
+        public DateTime committeeStartDate { get; set; }
+        public DateTime committeeEndDate { get; set; }
+
+    }
 }

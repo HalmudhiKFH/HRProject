@@ -4,14 +4,16 @@ using HRProject_BackEnd.Presistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRProject_BackEnd.Migrations
 {
     [DbContext(typeof(CommitteeDBContext))]
-    partial class CommitteeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220323085620_tryingMeetingFix2")]
+    partial class tryingMeetingFix2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,7 +72,7 @@ namespace HRProject_BackEnd.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CommitteeID")
+                    b.Property<int?>("CommitteeID")
                         .HasColumnType("int");
 
                     b.Property<string>("Location")
@@ -135,9 +137,7 @@ namespace HRProject_BackEnd.Migrations
                 {
                     b.HasOne("HRProject_BackEnd.Models.Committee", "Committee")
                         .WithMany("Meetings")
-                        .HasForeignKey("CommitteeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CommitteeID");
 
                     b.Navigation("Committee");
                 });

@@ -23,14 +23,14 @@ namespace HRProject_BackEnd.Controllers
 
         // GET: api/Meetings
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Meetings>>> GetMeetings()
+        public async Task<ActionResult<IEnumerable<Meeting>>> GetMeetings()
         {
             return await _context.Meetings.ToListAsync();
         }
 
         // GET: api/Meetings/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Meetings>> GetMeetings(int id)
+        public async Task<ActionResult<Meeting>> GetMeetings(int id)
         {
             var meetings = await _context.Meetings.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace HRProject_BackEnd.Controllers
         // PUT: api/Meetings/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMeetings(int id, Meetings meetings)
+        public async Task<IActionResult> PutMeetings(int id, Meeting meetings)
         {
             if (id != meetings.MeetingID)
             {
@@ -76,10 +76,12 @@ namespace HRProject_BackEnd.Controllers
         // POST: api/Meetings
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Meetings>> PostMeetings(Meetings meetings)
+        public async Task<ActionResult<Meeting>> PostMeetings(Meeting meetings)
         {
             _context.Meetings.Add(meetings);
             await _context.SaveChangesAsync();
+
+            //meetings.CommitteeID = await _context.Committees.SingleAsync(Meeting.Committee.CommitteeID);
 
             return CreatedAtAction("GetMeetings", new { id = meetings.MeetingID }, meetings);
         }

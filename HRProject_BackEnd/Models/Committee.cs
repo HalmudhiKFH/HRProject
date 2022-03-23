@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HRProject_BackEnd.Models
 {
-    public class Committees
+    public class Committee
     {
         [Key]
         [Required]
@@ -18,6 +18,7 @@ namespace HRProject_BackEnd.Models
         public int SecretaryID { get; set; }
         public DateTime CommitteeStartDate { get; set; }
         public DateTime CommitteeEndDate { get; set; }
-        public ICollection<UserInfoes> UserInfoes { get; set; }
+        public ICollection<UserInfo> UserInfoes { get; set; }
+        public ICollection<Meeting> Meetings { get; set; }
     }
 }

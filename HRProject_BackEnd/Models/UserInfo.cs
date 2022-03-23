@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRProject_BackEnd.Models
 {
-    public class UserInfoes
+    public class UserInfo
     {
         [Key]
         [Required]
@@ -21,6 +21,6 @@ namespace HRProject_BackEnd.Models
         public string UserName { get; set; }
         [Required]
         public bool IsEmployee { get; set; }
-        public ICollection<Committees> Committees { get; set; }
+        public ICollection<Committee> Committees { get; set; }
     }
 }
