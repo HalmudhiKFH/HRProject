@@ -1,0 +1,63 @@
+﻿@page "/createCommittee"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.ComponentModel.DataAnnotations
+
+
+<EditForm Model="@committee" OnValidSubmit="@CreateNewCommittee">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="CommitteeTitle">Committee Title</label>
+        <InputText id="CommitteeTitle" @bind-Value="committee.CommitteeTitle" />
+        <ValidationMessage For="@(() => committee.CommitteeTitle)" />
+    </div>
+    <div class="form-group">
+        <label for="Chairmanid">Chairman's ID</label>
+        <InputNumber id="Chairmanid" @bind-Value="committee.ChairmanID" />
+    </div>
+    <div class="form-group">
+        <label for="Secretaryid">Secretary's ID</label>
+        <InputNumber id="Secretaryid" @bind-Value="committee.SecretaryID" />
+    </div>
+    <div class="form-group">
+        <label for="CommitteeTitle">Committee Start Time</label>
+        <InputDate id="CommitteeTitle" @bind-Value="committee.CommitteeStartDate" />
+    </div>
+    <div class="form-group">
+        <label for="CommitteeTitle">Committee End Time</label>
+        <InputDate id="CommitteeTitle" @bind-Value="committee.CommitteeEndDate" />
+    </div>
+
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    Committee committee = new Committee();
+
+    public async Task<Committee> CreateTheCommittee(Committee request)
+    {
+        var result = await Http.PostAsJsonAsync("api/committees", request);
+        return await result.Content.ReadFromJsonAsync<Committee>();
+    }
+
+    async Task CreateNewCommittee()
+    {
+        var result = await CreateTheCommittee(committee);
+        NavigationManager.NavigateTo($"Committees");
+    }
+
+    public class Committee
+    {
+        [Key]
+        [Required]
+        public int CommitteeID { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string CommitteeTitle { get; set; }
+        public int ChairmanID { get; set; }
+        public int SecretaryID { get; set; }
+        public DateTime CommitteeStartDate { get; set; }
+        public DateTime CommitteeEndDate { get; set; }
+    }
+}
