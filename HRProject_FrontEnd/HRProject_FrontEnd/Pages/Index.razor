@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject NavigationManager NavigationManager
 
 <body class="u-body">
     <header class="u-clearfix u-header u-header" id="sec-41ff">
@@ -12,39 +13,50 @@
 
     <div class="container">
         <!--div class="row card-group col-4 box">
-        -->
+    -->
 
-    @foreach (var m in meetings)
-    {
+        @foreach (var m in meetings)
+        {
+    <a href="/meetingDetails//@m.meetingID">
+
         <button class="button btn-block">
             <h3 class="u-text u-text-2">@m.meetingTitle</h3>
-            <h6 class="u-text u-text-3">Committee</h6>
-            <h6 class="u-text u-text-4">@m.meetinID</h6>
+            <h6 class="u-text u-text-3">Committee: @m.committeeTitle</h6>
+            <h6 class="u-text u-text-4">@m.meetingID</h6>
         </button>
-    }
-        </div>
+        </a>
+        }
+        <a href="/createMeeting">
+
+            <button class="button btn-block">
+                <h1>+</h1>
+            </button>
+        </a>
+                    
+
+    </div>
 </body>
 
 
-@code {
-
-
+@code { 
+    
     private IEnumerable<meeting> meetings = new[] {
-        new meeting { meetingTitle = "HR meeting", meetinID = 1 },
-        new meeting { meetingTitle = "IT meeting", meetinID = 2 },
-        new meeting { meetingTitle = "PR meeting", meetinID = 3 },
-    };
+        new meeting { meetingTitle = "HR meeting", meetingID = 8643 , committeeTitle = "Happiness Team"},
+        new meeting { meetingTitle = "IT meeting", meetingID = 2038 , committeeTitle = "Front-End"},
+        new meeting { meetingTitle = "PR meeting", meetingID = 3384 , committeeTitle = "Activities"},
+        };
 
 
-    public class meeting
-    {
-        public int meetinID { get; set; }
+            public class meeting
+            {
+                public int meetingID { get; set; }
 
-        public DateTime dateTime { get; set; }
+                public DateTime dateTime { get; set; }
 
-        public string meetingTitle { get; set; }
+                public string meetingTitle { get; set; }
 
-        public string committeeTitle { get; set; }
-    }
+                public string committeeTitle { get; set; }
+            }
+
     
 }
