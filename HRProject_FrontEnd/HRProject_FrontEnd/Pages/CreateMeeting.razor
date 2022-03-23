@@ -1,6 +1,13 @@
 ﻿@page "/createMeeting"
+@inject HttpClient Http
+
 
 <h3>Create a new Meeting</h3>
+@if (committees == null)
+{
+<p><em>Loading...</em></p> }
+            else
+            {
 
 <form>
     <div class="form-row">
@@ -22,10 +29,10 @@
         <div class="form-group col-md-6">
             <label for="inputCity">Date</label>
             <div class="input-group date" data-provide="datepicker">
-               
+
                 <!-- Testing Date picker-->
                 <div style="width:400px">
-                    <input data-provide="picker" type="date" class="picker" data-date-format="mm/dd/yyyy">
+                    <input data-provide="picker" type="date" class="picker" data-date-format="dd-mm-yyyy">
                 </div>
 
                 <div class="input-group-addon">
@@ -36,16 +43,39 @@
         <div class="form-group col-md-4">
             <label for="inputState">Committee</label>
             <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
+
+                <select id="s" name="s"></select>
+
+                <option selected value="No Committee">Choose Committee...</option>
+                @foreach (var c in committees)
+                {
+                <option name="s" value="@c.CommitteeID">@c.CommitteeTitle</option>}
+
             </select>
         </div>
 
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    Result: <output name="s"></output>
+    
+</form>}
 
-@code {
+@code { private int x = 1;
+            private committee[] committees;
 
-}
+            protected override async Task OnInitializedAsync()
+            {
+                committees = await Http.GetFromJsonAsync<committee[]>("api/committees");
+            }
+
+            public class committee
+            {
+                public int CommitteeID { get; set; }
+                public string CommitteeTitle { get; set; }
+                public int chairmanID { get; set; }
+                public int secretaryID { get; set; }
+                public DateTime committeeStartDate { get; set; }
+                public DateTime committeeEndDate { get; set; }
+
+            } }
